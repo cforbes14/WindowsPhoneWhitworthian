@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>SimpleFeedReader</id>
+    <version>1.0.2.0</version>
+    <title>SimpleFeedReader</title>
+    <authors>RobIII</authors>
+    <owners>RobIII</owners>
+    <licenseUrl>https://raw.githubusercontent.com/RobThree/SimpleFeedReader/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/RobThree/SimpleFeedReader</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/RobThree/SimpleFeedReader/master/Gfx/icon.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Easy to use, simple, Syndication feed reader (Atom / RSS).</description>
+    <summary>Provides classes and methods for consuming syndication feeds.</summary>
+    <releaseNotes>* Added FeedItem Id property</releaseNotes>
+    <copyright>(C)2014 Devcorner.nl</copyright>
+    <tags>rss atom syndication feed</tags>
+  </metadata>
+</package>
