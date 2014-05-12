@@ -101,6 +101,8 @@ namespace Whitworthian.ViewModels
                            
                         }
                     }
+                    Collection<SyndicationCategory> cat = item.Categories;
+                    
 
                     this.NewsItems.Add(new ItemViewModel() { NewsLineTitle = item.Title.Text, NewsLineSummary = item.Summary.Text, NewsLineText = content, NewsLinePic = url});
                 }

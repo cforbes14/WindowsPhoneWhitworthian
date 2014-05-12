@@ -17,6 +17,7 @@
         </Style>
         
         <local:LocalizedStrings xmlns:local="clr-namespace:Whitworthian" x:Key="LocalizedStrings"/>
+        
     </Application.Resources>
 
     <Application.ApplicationLifetimeObjects>

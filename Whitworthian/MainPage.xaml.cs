@@ -12,6 +12,7 @@ using System.ServiceModel.Syndication;
 using System.Xml;
 using Microsoft.Phone.Tasks;
 using Whitworthian.ViewModels;
+using System.Windows.Input;
 
 namespace Whitworthian
 {
@@ -30,11 +31,7 @@ namespace Whitworthian
         // Load data for the ViewModel Items
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            //if (!App.ViewModel.IsDataLoaded)
-            //{
-            //    App.ViewModel.LoadData();
-            //}
-
+            
         }
 
 
@@ -127,6 +124,12 @@ namespace Whitworthian
                 }
             }
             NavigationService.Navigate(new Uri("/NewsArticle.xaml?title=" + title + "&content=" + content + "&image=" + image, UriKind.Relative));
+        }
+
+        private void Search_Click(object sender, EventArgs e)
+        {
+
+            NavigationService.Navigate(new Uri("/Search.xaml", UriKind.Relative));
         }
 
 
