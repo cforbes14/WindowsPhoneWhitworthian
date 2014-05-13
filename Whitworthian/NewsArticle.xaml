@@ -27,13 +27,27 @@
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
-        <Grid Height="auto" x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">              
-          
-            <ListBox Height="auto" Width="auto" Margin="0,10,0,0">
-                <Image x:Name="NewsImage" Source="Assets\News.png" Height="auto" Width="auto" RenderTransformOrigin="0.835,0.558"/>
-                  <TextBlock Name="NewsArticleContent" Height="auto" TextWrapping="Wrap"  Foreground="Black"  Width="auto"/>
-              </ListBox>
-            
+        <Grid Height="auto" x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <ListBox>
+                <StackPanel>
+                    <Image x:Name="NewsImage" Width="auto" Source="Assets\News.png"/>
+
+
+                    <!--<ListBox Height="auto" Width="auto" Margin="0,10,0,0">-->
+                    <phone:LongListSelector Foreground="Black" ItemsSource="{Binding Paragraphs}">
+
+                        <phone:LongListSelector.ItemTemplate>
+
+                            <DataTemplate>
+                                <ListBoxItem>
+                                    <TextBlock Text="{Binding}" TextWrapping="Wrap" Foreground="Black"/>
+                                </ListBoxItem>
+
+                            </DataTemplate>
+                        </phone:LongListSelector.ItemTemplate>
+                    </phone:LongListSelector>
+                </StackPanel>
+            </ListBox>
         </Grid>
     </Grid>
 
