@@ -20,11 +20,11 @@ namespace Whitworthian
             
            
         }
-        public ScrollableTextBlock stb = new ScrollableTextBlock();
 
         // Load data for the ViewModel Items
         protected override void OnNavigatedTo(NavigationEventArgs e)
-        {          
+        {      
+    
             string title = "";
             if(NavigationContext.QueryString.TryGetValue("title", out title))
             {                
@@ -39,7 +39,7 @@ namespace Whitworthian
             string content = "";
             if (NavigationContext.QueryString.TryGetValue("content", out content))
             {
-               NewsArticleContent.Text = fixString(content);
+                this.DataContext = new ExpandContent(fixString(content));
             }
 
         }
