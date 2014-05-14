@@ -144,7 +144,7 @@ namespace Whitworthian
             c = c.Replace("&#8211;", " - ");
             c = c.Replace("&nbsp;", " ");
             c = c.Replace("&#8217;", "'");
-            c = c.Replace("&amp;", "&");
+            c = c.Replace("&amp;", "amp;");
             return c;
         }
     }

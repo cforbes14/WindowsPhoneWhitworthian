@@ -58,6 +58,9 @@ namespace Whitworthian
             c = c.Replace("<br />", "");
             c = c.Replace("<em>", "");
             c = c.Replace("</em>", "");
+            c = c.Replace("amp;", "&");
+            c = c.Replace("<i>", "");
+            c = c.Replace("</i>", "");
 
             int start = -1, end = -1;
             bool startChanged = false, endChanged = false;
