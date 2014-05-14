@@ -28,11 +28,11 @@ namespace Whitworthian
         }
 
 
-        // Load data for the ViewModel Items
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
+        //// Load data for the ViewModel Items
+        //protected override void OnNavigatedTo(NavigationEventArgs e)
+        //{
             
-        }
+        //}
 
 
         //Navigate to the News Article Page
@@ -53,9 +53,10 @@ namespace Whitworthian
                 {
                     content = current.NewsLineText;
                     image = current.NewsLinePic;
+                    break;
                 }
             }
-            
+            content = removeAmp(content);
             NavigationService.Navigate(new Uri("/NewsArticle.xaml?title=" + title + "&content=" + content + "&image=" + image, UriKind.Relative));            
             
         }
@@ -77,9 +78,10 @@ namespace Whitworthian
                 {
                     content = current.ACLineText;
                     image = current.ACLinePic;
+                    break;
                 }
             }
-
+            content = removeAmp(content);
             NavigationService.Navigate(new Uri("/NewsArticle.xaml?title=" + title + "&content=" + content + "&image=" + image, UriKind.Relative));  
         }
         //Navigate to the Opinions Article Page
@@ -100,8 +102,10 @@ namespace Whitworthian
                 {
                     content = current.OpinionsLineText;
                     image = current.OpinionsLinePic;
+                    break;
                 }
             }
+            content = removeAmp(content);
             NavigationService.Navigate(new Uri("/NewsArticle.xaml?title=" + title + "&content=" + content + "&image=" + image, UriKind.Relative));
         }
         //Navigate to the Sports Article Page
@@ -121,8 +125,10 @@ namespace Whitworthian
                 {
                     content = current.SportsLineText;
                     image = current.SportsLinePic;
+                    break;
                 }
             }
+            content = removeAmp(content);
             NavigationService.Navigate(new Uri("/NewsArticle.xaml?title=" + title + "&content=" + content + "&image=" + image, UriKind.Relative));
         }
 
@@ -132,6 +138,14 @@ namespace Whitworthian
             NavigationService.Navigate(new Uri("/Search.xaml", UriKind.Relative));
         }
 
-
+        //Need to remove before naviagation because '&' is a special character in Uri's
+        private string removeAmp(string c)
+        {
+            c = c.Replace("&#8211;", " - ");
+            c = c.Replace("&nbsp;", " ");
+            c = c.Replace("&#8217;", "'");
+            c = c.Replace("&amp;", "&");
+            return c;
+        }
     }
 }

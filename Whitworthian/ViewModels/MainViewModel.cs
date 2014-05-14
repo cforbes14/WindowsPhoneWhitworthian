@@ -15,7 +15,6 @@ using System.Text;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
-
 namespace Whitworthian.ViewModels
 {
     public class MainViewModel : INotifyPropertyChanged
@@ -27,7 +26,7 @@ namespace Whitworthian.ViewModels
             this.ACItems = new ObservableCollection<ItemViewModel>();
             this.OpinionsItems = new ObservableCollection<ItemViewModel>();
             this.SportsItems = new ObservableCollection<ItemViewModel>();
-
+            this.ItemsTotal = new ObservableCollection<ItemViewModel>();
 
             //New
 
@@ -74,7 +73,8 @@ namespace Whitworthian.ViewModels
             StringReader stringReader = new StringReader(feedXML);
             XmlReader xmlReader = XmlReader.Create(stringReader);
             SyndicationFeed feed = SyndicationFeed.Load(xmlReader);
-            //XElement rss = XElement.Parse(feedXML);
+            XElement rss = XElement.Parse(feedXML);
+            StringBuilder sb = new StringBuilder();
 
             // In Windows Phone OS 7.1 or later versions, WebClient events are raised on the same type of thread they were called upon. 
             // For example, if WebClient was run on a background thread, the event would be raised on the background thread. 
@@ -90,9 +90,10 @@ namespace Whitworthian.ViewModels
                     var url = "";
                     foreach (SyndicationElementExtension ext in item.ElementExtensions)
                     {
-                        if (ext.GetObject<XElement>().Name.LocalName == "encoded")
+                        if (ext.GetObject<XElement>().Name.LocalName == "encoded" && ext.GetObject<XElement>().Name.Namespace.ToString().Contains("content"))
                         {
                             content = ext.GetObject<XElement>().Value;
+                            sb.Append(ext.GetObject<XElement>().Value);
                         }
 
                         if (ext.GetObject<XElement>().Name.LocalName == "thumbnail")
@@ -104,7 +105,9 @@ namespace Whitworthian.ViewModels
                     Collection<SyndicationCategory> cat = item.Categories;
                     
 
-                    this.NewsItems.Add(new ItemViewModel() { NewsLineTitle = item.Title.Text, NewsLineSummary = item.Summary.Text, NewsLineText = content, NewsLinePic = url});
+                    this.NewsItems.Add(new ItemViewModel() { NewsLineTitle = item.Title.Text, NewsLineSummary = item.Summary.Text, NewsLineText = sb.ToString(), NewsLinePic = url});
+                    this.ItemsTotal.Add(new ItemViewModel() { NewsLineTitle = item.Title.Text, NewsLineSummary = item.Summary.Text, NewsLineText = sb.ToString(), NewsLinePic = url });
+                    sb.Clear();
                 }
                 
                 
@@ -118,6 +121,7 @@ namespace Whitworthian.ViewModels
             StringReader stringReader = new StringReader(feedXML);
             XmlReader xmlReader = XmlReader.Create(stringReader);
             SyndicationFeed feed = SyndicationFeed.Load(xmlReader);
+            StringBuilder sb = new StringBuilder();
 
             // In Windows Phone OS 7.1 or later versions, WebClient events are raised on the same type of thread they were called upon. 
             // For example, if WebClient was run on a background thread, the event would be raised on the background thread. 
@@ -142,6 +146,7 @@ namespace Whitworthian.ViewModels
                         }
                     }
                     this.OpinionsItems.Add(new ItemViewModel() { OpinionsLineTitle = item.Title.Text, OpinionsLineSummary = item.Summary.Text, OpinionsLineText = content, OpinionsLinePic = url });
+                    this.ItemsTotal.Add(new ItemViewModel() { OpinionsLineTitle = item.Title.Text, OpinionsLineSummary = item.Summary.Text, OpinionsLineText = content, OpinionsLinePic = url });
                 }
 
             });
@@ -154,6 +159,7 @@ namespace Whitworthian.ViewModels
             StringReader stringReader = new StringReader(feedXML);
             XmlReader xmlReader = XmlReader.Create(stringReader);
             SyndicationFeed feed = SyndicationFeed.Load(xmlReader);
+            StringBuilder sb = new StringBuilder();
 
             // In Windows Phone OS 7.1 or later versions, WebClient events are raised on the same type of thread they were called upon. 
             // For example, if WebClient was run on a background thread, the event would be raised on the background thread. 
@@ -171,13 +177,16 @@ namespace Whitworthian.ViewModels
                         if (ext.GetObject<XElement>().Name.LocalName == "encoded")
                         {
                             content = ext.GetObject<XElement>().Value;
+                            sb.Append(ext.GetObject<XElement>().Value);
                         }
                         if (ext.GetObject<XElement>().Name.LocalName == "thumbnail")
                         {
                             url = ext.GetObject<XElement>().Attribute("url").Value;
                         }
                     }
-                    this.ACItems.Add(new ItemViewModel() { ACLineTitle = item.Title.Text, ACLineSummary = item.Summary.Text, ACLineText = content, ACLinePic = url });
+                    this.ACItems.Add(new ItemViewModel() { ACLineTitle = item.Title.Text, ACLineSummary = item.Summary.Text, ACLineText = sb.ToString(), ACLinePic = url });
+                    this.ItemsTotal.Add(new ItemViewModel() { ACLineTitle = item.Title.Text, ACLineSummary = item.Summary.Text, ACLineText = sb.ToString(), ACLinePic = url });
+                    sb.Clear();
                 }
 
             });
@@ -214,6 +223,8 @@ namespace Whitworthian.ViewModels
                         }
                     }
                     this.SportsItems.Add(new ItemViewModel() { SportsLineTitle = item.Title.Text, SportsLineSummary = item.Summary.Text, SportsLineText = content, SportsLinePic = url });
+                    this.ItemsTotal.Add(new ItemViewModel() { SportsLineTitle = item.Title.Text, SportsLineSummary = item.Summary.Text, SportsLineText = content, SportsLinePic = url });
+
                 }
 
             });
@@ -314,6 +325,7 @@ namespace Whitworthian.ViewModels
         public ObservableCollection<ItemViewModel> ACItems { get; private set; }
         public ObservableCollection<ItemViewModel> OpinionsItems { get; private set; }
         public ObservableCollection<ItemViewModel> SportsItems { get; private set; }
+        public ObservableCollection<ItemViewModel> ItemsTotal { get; private set; }
 
         private string _sampleProperty = "Sample Runtime Property Value";
         /// <summary>
