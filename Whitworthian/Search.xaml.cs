@@ -143,9 +143,20 @@ namespace Whitworthian
                     image = currentSports.SportsLinePic;
                 }
             }
-
+            content = removeAmp(content);
             NavigationService.Navigate(new Uri("/NewsArticle.xaml?title=" + title + "&content=" + content + "&image=" + image, UriKind.Relative));
         }
+
+        //Need to remove before naviagation because '&' is a special character in Uri's
+        private string removeAmp(string c)
+        {
+            c = c.Replace("&#8211;", " - ");
+            c = c.Replace("&#nbsp;", " ");
+            c = c.Replace("&#8217;", "'");
+            c = c.Replace("&amp;", "&");
+            return c;
+        }
+
 
     }
 }

@@ -8,7 +8,7 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using System.Windows.Media.Imaging;
-
+using Whitworthian.ViewModels;
 namespace Whitworthian
 {
     public partial class NewsArticle : PhoneApplicationPage
@@ -16,8 +16,6 @@ namespace Whitworthian
         public NewsArticle()
         {
             InitializeComponent();
-
-            
            
         }
 
@@ -36,9 +34,11 @@ namespace Whitworthian
             {
                 NewsImage.Source = new BitmapImage(new Uri(image, UriKind.Absolute));
             }
+
             string content = "";
+
             if (NavigationContext.QueryString.TryGetValue("content", out content))
-            {
+            {                           
                 this.DataContext = new ExpandContent(fixString(content));
             }
 
@@ -48,8 +48,9 @@ namespace Whitworthian
         {
             c = c.Replace("<p>", "\n");
             c = c.Replace("</p>", "");
-            c = c.Replace("<p", "\n<");
+          //  c = c.Replace("<p", "\n<");
             c = c.Replace("<p dir=\"ltr\">", "\n");
+           
             c = c.Replace("<div>", "");
             c = c.Replace("</div>", "");
             c = c.Replace("<strong>", "");
@@ -60,27 +61,27 @@ namespace Whitworthian
 
             int start = -1, end = -1;
             bool startChanged = false, endChanged = false;
-            for (int i = 0; i < c.Length; i++)
-            {
-                if (c[i] == '<')
-                {
-                    start = i;
-                    startChanged = true;
+            //for (int i = 0; i < c.Length; i++)
+            //{
+            //    if (c[i] == '<')
+            //    {
+            //        start = i;
+            //        startChanged = true;
 
-                }
-                if (c[i] == '>')
-                {
-                    end = i;
-                    endChanged = true;
-                }
-                if (end != -1 && start < end && startChanged && endChanged)
-                {
-                    c = c.Remove(start, end - start + 1);
-                    startChanged = false;
-                    endChanged = false;
-                    i = 0;
-                }
-            }
+            //    }
+            //    if (c[i] == '>')
+            //    {
+            //        end = i;
+            //        endChanged = true;
+            //    }
+            //    if (end != -1 && start < end && startChanged && endChanged)
+            //    {
+            //        c = c.Remove(start, end - start + 1);
+            //        startChanged = false;
+            //        endChanged = false;
+            //        i = 0;
+            //    }
+            //}
                 
                 return c;
         }
