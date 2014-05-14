@@ -130,3 +130,4 @@ Q:\cforbes14\CS 472\Whitworthian\Whitworthian\obj\Debug\Whitworthian.dll
 Q:\cforbes14\CS 472\Whitworthian\Whitworthian\obj\Debug\Whitworthian.pdb
 Q:\cforbes14\CS 472\Whitworthian\Whitworthian\obj\Debug\XapCacheFile.xml
 \\cs1\CS_Students\cforbes14\CS 472\Whitworthian\Whitworthian\obj\Debug\Whitworthian.csprojResolveAssemblyReference.cache
+Q:\cforbes14\CS 472\Whitworthian\Whitworthian\obj\Debug\Whitworthian.csprojResolveAssemblyReference.cache
