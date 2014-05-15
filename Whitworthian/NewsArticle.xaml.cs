@@ -38,55 +38,17 @@ namespace Whitworthian
             string content = "";
 
             if (NavigationContext.QueryString.TryGetValue("content", out content))
-            {                           
-                this.DataContext = new ExpandContent(fixString(content));
+            {
+                this.DataContext = new ExpandContent(addAmp(content));
             }
 
         }
 
-        private static string fixString(string c)
-        {
-            c = c.Replace("<p>", "\n");
-            c = c.Replace("</p>", "");
-          //  c = c.Replace("<p", "\n<");
-            c = c.Replace("<p dir=\"ltr\">", "\n");
-           
-            c = c.Replace("<div>", "");
-            c = c.Replace("</div>", "");
-            c = c.Replace("<strong>", "");
-            c = c.Replace("</strong>", "");
-            c = c.Replace("<br />", "");
-            c = c.Replace("<em>", "");
-            c = c.Replace("</em>", "");
-            c = c.Replace("amp;", "&");
-            c = c.Replace("<i>", "");
-            c = c.Replace("</i>", "");
-
-            int start = -1, end = -1;
-            bool startChanged = false, endChanged = false;
-            //for (int i = 0; i < c.Length; i++)
-            //{
-            //    if (c[i] == '<')
-            //    {
-            //        start = i;
-            //        startChanged = true;
-
-            //    }
-            //    if (c[i] == '>')
-            //    {
-            //        end = i;
-            //        endChanged = true;
-            //    }
-            //    if (end != -1 && start < end && startChanged && endChanged)
-            //    {
-            //        c = c.Remove(start, end - start + 1);
-            //        startChanged = false;
-            //        endChanged = false;
-            //        i = 0;
-            //    }
-            //}
-                
-                return c;
+        //The only thing that can't be passed through
+        private static string addAmp(string c)
+        {        
+            c = c.Replace("amp;", "&");   
+            return c;
         }
         
     }

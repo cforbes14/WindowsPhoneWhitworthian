@@ -23,7 +23,7 @@
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
             <TextBlock Foreground="#CD212F" Text="Search" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBox Name="SearchBox" Tap="Search_Func" KeyDown="textBox_KeyDown" Foreground="Black" Text="Search Here" Margin="9,-7,0,0">
+            <TextBox Foreground="Black" Name="SearchBox" Tap="Search_Func" KeyDown="textBox_KeyDown"  Text="Search Here" Margin="9,-7,0,0">
                 <TextBox.InputScope>
                     <InputScope>
                         <InputScopeName NameValue="Search"/>
