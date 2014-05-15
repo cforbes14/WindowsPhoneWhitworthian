@@ -10,6 +10,11 @@ using System.Windows.Media;
 
 namespace Whitworthian
 {
+    /// <summary>
+    /// TextBlockSplitter splits the TextBlock to accomodate content longer than 2048px in height.
+    /// Code courtesy of Denis Stankovski at http://ppe.blogs.msdn.com/b/stankovski/archive/2013/08/27/yet-another-scrollable-textblock-for-windows-phone.aspx
+    /// Originally posted:  8/27/2013  Accessed:  5/15/2014
+    /// </summary>
     public class TextBlockSplitter
     {
         private TextBlock measureBlock;
