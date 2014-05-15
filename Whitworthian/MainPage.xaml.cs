@@ -27,14 +27,16 @@ namespace Whitworthian
             DataContext = App.ViewModel;
         }
 
+        private void OnNavigatedTo(NavigationEventArgs e)
+        {
+            // Ensure that application state is restored appropriately
+            if (!App.ViewModel.IsDataLoaded)
+            {
+                App.ViewModel.LoadData();
+            }
+        }
 
-        //// Load data for the ViewModel Items
-        //protected override void OnNavigatedTo(NavigationEventArgs e)
-        //{
-            
-        //}
-
-
+        
         //Navigate to the News Article Page
         private void NewsNav_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {            
@@ -56,7 +58,7 @@ namespace Whitworthian
                     break;
                 }
             }
-            content = removeAmp(content);
+            content = fixString(content);
             NavigationService.Navigate(new Uri("/NewsArticle.xaml?title=" + title + "&content=" + content + "&image=" + image, UriKind.Relative));            
             
         }
@@ -81,7 +83,7 @@ namespace Whitworthian
                     break;
                 }
             }
-            content = removeAmp(content);
+            content = fixString(content);
             NavigationService.Navigate(new Uri("/NewsArticle.xaml?title=" + title + "&content=" + content + "&image=" + image, UriKind.Relative));  
         }
         //Navigate to the Opinions Article Page
@@ -105,7 +107,7 @@ namespace Whitworthian
                     break;
                 }
             }
-            content = removeAmp(content);
+            content = fixString(content);
             NavigationService.Navigate(new Uri("/NewsArticle.xaml?title=" + title + "&content=" + content + "&image=" + image, UriKind.Relative));
         }
         //Navigate to the Sports Article Page
@@ -128,7 +130,7 @@ namespace Whitworthian
                     break;
                 }
             }
-            content = removeAmp(content);
+            content = fixString(content);
             NavigationService.Navigate(new Uri("/NewsArticle.xaml?title=" + title + "&content=" + content + "&image=" + image, UriKind.Relative));
         }
 
@@ -139,12 +141,71 @@ namespace Whitworthian
         }
 
         //Need to remove before naviagation because '&' is a special character in Uri's
-        private string removeAmp(string c)
+        private static string fixString(string c)
         {
+            c = c.Replace("<p", "<");
+            c = c.Replace("<strong>", "");
+            c = c.Replace("</strong>", "");
+
             c = c.Replace("&#8211;", " - ");
             c = c.Replace("&nbsp;", " ");
             c = c.Replace("&#8217;", "'");
             c = c.Replace("&amp;", "amp;");
+
+
+            int startDiv = -1, endDiv = -1;
+            bool inDiv = true;
+            for (int i = 0; i < c.Length; i++)
+            {
+                if(i+4 < c.Length)
+                {
+                    if(c.Substring(i, 5) == "<div ")
+                    {
+                        startDiv = i;
+                        inDiv = true;
+                    }
+                }
+                if(i+5 < c.Length)
+                {
+                    if(c.Substring(i, 6) == "</div>")
+                    {
+                        endDiv = i+6;                        
+                    }
+                }
+
+                if (endDiv > startDiv && startDiv != -1 && endDiv != -1 && inDiv == true)
+                {
+                   c = c.Remove(startDiv, endDiv-startDiv);
+                   inDiv = false;
+                }
+            }
+
+            int start = -1, end = -1;
+            bool startChanged = false, endChanged = false;
+            for (int i = 0; i < c.Length; i++)
+            {
+                if (c[i] == '<')
+                {
+                    start = i;
+                    startChanged = true;
+
+                }
+                if (c[i] == '>')
+                {
+                    end = i;
+                    endChanged = true;
+                }
+                if (end != -1 && start < end && startChanged && endChanged)
+                {
+                    c = c.Remove(start, end - start + 1);
+                    startChanged = false;
+                    endChanged = false;
+                    i = 0;
+                }
+            }
+
+        
+
             return c;
         }
     }

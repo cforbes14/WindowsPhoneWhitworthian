@@ -54,8 +54,8 @@
                             <StackPanel x:Name="NewsStack" Orientation="Horizontal" Margin="12,2,0,4" Height="105" Width="432">
                                 <!--Replace rectangle with image-->
                                 <StackPanel Margin="12,2,0,4" Width="432">
-                                    <TextBlock Height="auto" Margin="0" TextTrimming="WordEllipsis" Tap="NewsNav_Tap" Text="{Binding NewsLineTitle}" Style="{StaticResource PhoneTextExtraLargeStyle}" FontSize="{StaticResource PhoneFontSizeLarge}" />
-                                    <TextBlock TextTrimming="WordEllipsis" TextWrapping="Wrap" Margin="0" Height="auto" Text="{Binding NewsLineSummary}"  Style="{StaticResource PhoneTextSubtleStyle}" />
+                                    <TextBlock Foreground="Black" Height="auto" Margin="0" TextTrimming="WordEllipsis" Tap="NewsNav_Tap" Text="{Binding NewsLineTitle}" Style="{StaticResource PhoneTextExtraLargeStyle}" FontSize="{StaticResource PhoneFontSizeLarge}" />
+                                    <TextBlock Foreground="Black"  TextTrimming="WordEllipsis" TextWrapping="Wrap" Margin="0" Height="auto" Text="{Binding NewsLineSummary}"  Style="{StaticResource PhoneTextSubtleStyle}" />
                                 </StackPanel>
                             </StackPanel>
                         </DataTemplate>
@@ -73,8 +73,8 @@
                                 <!--Replace rectangle with image-->
                                 <!-- <Image Margin="0" Source="Assets\AC.png" />-->
                                 <StackPanel Margin="12,2,0,4" Width="432">
-                                    <TextBlock Height="auto" Tap="ACNav_Tap" TextTrimming="WordEllipsis" Text="{Binding ACLineTitle}" Margin="0" Width="auto"  Style="{StaticResource PhoneTextExtraLargeStyle}" FontSize="{StaticResource PhoneFontSizeLarge}" />
-                                    <TextBlock TextWrapping="Wrap" TextTrimming="WordEllipsis" Margin="0" Height="auto" Text="{Binding ACLineSummary}"  Style="{StaticResource PhoneTextSubtleStyle}" />
+                                    <TextBlock Foreground="Black" Height="auto" Tap="ACNav_Tap" TextTrimming="WordEllipsis" Text="{Binding ACLineTitle}" Margin="0" Width="auto"  Style="{StaticResource PhoneTextExtraLargeStyle}" FontSize="{StaticResource PhoneFontSizeLarge}" />
+                                    <TextBlock Foreground="Black" TextWrapping="Wrap" TextTrimming="WordEllipsis" Margin="0" Height="auto" Text="{Binding ACLineSummary}"  Style="{StaticResource PhoneTextSubtleStyle}" />
                                 </StackPanel>
                             </StackPanel>
                         </DataTemplate>
@@ -93,8 +93,8 @@
                                 <!--Replace rectangle with image-->
                                 <!--<Image Margin="0" Source="Assets\Opinions.png" />-->
                                 <StackPanel Margin="12,2,0,4" Width="432">
-                                    <TextBlock Tap="OpinionsNav_Tap" Height="auto" TextTrimming="WordEllipsis" Text="{Binding OpinionsLineTitle}" Margin="0" Width="auto"  Style="{StaticResource PhoneTextExtraLargeStyle}" FontSize="{StaticResource PhoneFontSizeLarge}" />
-                                    <TextBlock TextWrapping="Wrap" TextTrimming="WordEllipsis" Margin="0" Height="auto" Text="{Binding OpinionsLineSummary}"  Style="{StaticResource PhoneTextSubtleStyle}" />
+                                    <TextBlock Foreground="Black" Tap="OpinionsNav_Tap" Height="auto" TextTrimming="WordEllipsis" Text="{Binding OpinionsLineTitle}" Margin="0" Width="auto"  Style="{StaticResource PhoneTextExtraLargeStyle}" FontSize="{StaticResource PhoneFontSizeLarge}" />
+                                    <TextBlock Foreground="Black" TextWrapping="Wrap" TextTrimming="WordEllipsis" Margin="0" Height="auto" Text="{Binding OpinionsLineSummary}"  Style="{StaticResource PhoneTextSubtleStyle}" />
                                 </StackPanel>
                             </StackPanel>
                         </DataTemplate>
@@ -112,8 +112,8 @@
                                 <!--Replace rectangle with image-->
                                 <!--<Image Margin="0" Source="Assets\Sports.png" />-->
                                 <StackPanel Margin="12,2,0,4" Width="432">
-                                    <TextBlock Tap="SportsNav_Tap" Height="auto" TextTrimming="WordEllipsis" Text="{Binding SportsLineTitle}" Margin="0" Width="auto"  Style="{StaticResource PhoneTextExtraLargeStyle}" FontSize="{StaticResource PhoneFontSizeLarge}" />
-                                    <TextBlock TextWrapping="Wrap" TextTrimming="WordEllipsis" Margin="0" Height="auto" Text="{Binding SportsLineSummary}"  Style="{StaticResource PhoneTextSubtleStyle}" />
+                                    <TextBlock Foreground="Black" Tap="SportsNav_Tap" Height="auto" TextTrimming="WordEllipsis" Text="{Binding SportsLineTitle}" Margin="0" Width="auto"  Style="{StaticResource PhoneTextExtraLargeStyle}" FontSize="{StaticResource PhoneFontSizeLarge}" />
+                                    <TextBlock Foreground="Black" TextWrapping="Wrap" TextTrimming="WordEllipsis" Margin="0" Height="auto" Text="{Binding SportsLineSummary}"  Style="{StaticResource PhoneTextSubtleStyle}" />
                                 </StackPanel>
                             </StackPanel>
                         </DataTemplate>
