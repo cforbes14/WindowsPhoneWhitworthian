@@ -17,25 +17,6 @@ Y:\CS 472\Whitworthian\Whitworthian\obj\Debug\Whitworthian.csproj.GenerateResour
 Y:\CS 472\Whitworthian\Whitworthian\obj\Debug\Whitworthian.dll
 Y:\CS 472\Whitworthian\Whitworthian\obj\Debug\Whitworthian.pdb
 Y:\CS 472\Whitworthian\Whitworthian\obj\Debug\XapCacheFile.xml
-C:\Users\Colleen\Desktop\Whitworthian\Whitworthian\Bin\Debug\Assets\ApplicationIcon.png
-C:\Users\Colleen\Desktop\Whitworthian\Whitworthian\Bin\Debug\Assets\Tiles\FlipCycleTileLarge.png
-C:\Users\Colleen\Desktop\Whitworthian\Whitworthian\Bin\Debug\Assets\Tiles\FlipCycleTileMedium.png
-C:\Users\Colleen\Desktop\Whitworthian\Whitworthian\Bin\Debug\Assets\Tiles\FlipCycleTileSmall.png
-C:\Users\Colleen\Desktop\Whitworthian\Whitworthian\Bin\Debug\Assets\Tiles\IconicTileMediumLarge.png
-C:\Users\Colleen\Desktop\Whitworthian\Whitworthian\Bin\Debug\Assets\Tiles\IconicTileSmall.png
-C:\Users\Colleen\Desktop\Whitworthian\Whitworthian\Bin\Debug\Whitworthian.dll
-C:\Users\Colleen\Desktop\Whitworthian\Whitworthian\Bin\Debug\Whitworthian.pdb
-C:\Users\Colleen\Desktop\Whitworthian\Whitworthian\Bin\Debug\AppManifest.xaml
-C:\Users\Colleen\Desktop\Whitworthian\Whitworthian\Bin\Debug\Properties\WMAppManifest.xml
-C:\Users\Colleen\Desktop\Whitworthian\Whitworthian\Bin\Debug\Whitworthian_Debug_AnyCPU.xap
-C:\Users\Colleen\Desktop\Whitworthian\Whitworthian\obj\Debug\App.g.cs
-C:\Users\Colleen\Desktop\Whitworthian\Whitworthian\obj\Debug\MainPage.g.cs
-C:\Users\Colleen\Desktop\Whitworthian\Whitworthian\obj\Debug\Whitworthian.g.resources
-C:\Users\Colleen\Desktop\Whitworthian\Whitworthian\obj\Debug\Whitworthian.Resources.AppResources.resources
-C:\Users\Colleen\Desktop\Whitworthian\Whitworthian\obj\Debug\Whitworthian.csproj.GenerateResource.Cache
-C:\Users\Colleen\Desktop\Whitworthian\Whitworthian\obj\Debug\Whitworthian.dll
-C:\Users\Colleen\Desktop\Whitworthian\Whitworthian\obj\Debug\Whitworthian.pdb
-C:\Users\Colleen\Desktop\Whitworthian\Whitworthian\obj\Debug\XapCacheFile.xml
 \\cs1\CS_Students\cforbes14\CS 472\Whitworthian\Whitworthian\Bin\Debug\Assets\Tiles\FlipCycleTileLarge.png
 \\cs1\CS_Students\cforbes14\CS 472\Whitworthian\Whitworthian\Bin\Debug\Assets\Tiles\FlipCycleTileMedium.png
 \\cs1\CS_Students\cforbes14\CS 472\Whitworthian\Whitworthian\Bin\Debug\Assets\Tiles\FlipCycleTileSmall.png
@@ -131,3 +112,23 @@ Q:\cforbes14\CS 472\Whitworthian\Whitworthian\obj\Debug\Whitworthian.pdb
 Q:\cforbes14\CS 472\Whitworthian\Whitworthian\obj\Debug\XapCacheFile.xml
 \\cs1\CS_Students\cforbes14\CS 472\Whitworthian\Whitworthian\obj\Debug\Whitworthian.csprojResolveAssemblyReference.cache
 Q:\cforbes14\CS 472\Whitworthian\Whitworthian\obj\Debug\Whitworthian.csprojResolveAssemblyReference.cache
+C:\Users\Colleen\Desktop\Whitworthian\Whitworthian\Bin\Debug\Assets\Tiles\FlipCycleTileLarge.png
+C:\Users\Colleen\Desktop\Whitworthian\Whitworthian\Bin\Debug\Assets\Tiles\FlipCycleTileMedium.png
+C:\Users\Colleen\Desktop\Whitworthian\Whitworthian\Bin\Debug\Assets\Tiles\FlipCycleTileSmall.png
+C:\Users\Colleen\Desktop\Whitworthian\Whitworthian\Bin\Debug\Assets\Tiles\IconicTileMediumLarge.png
+C:\Users\Colleen\Desktop\Whitworthian\Whitworthian\Bin\Debug\Assets\Tiles\IconicTileSmall.png
+C:\Users\Colleen\Desktop\Whitworthian\Whitworthian\Bin\Debug\Whitworthian.dll
+C:\Users\Colleen\Desktop\Whitworthian\Whitworthian\Bin\Debug\Whitworthian.pdb
+C:\Users\Colleen\Desktop\Whitworthian\Whitworthian\Bin\Debug\AppManifest.xaml
+C:\Users\Colleen\Desktop\Whitworthian\Whitworthian\Bin\Debug\Properties\WMAppManifest.xml
+C:\Users\Colleen\Desktop\Whitworthian\Whitworthian\Bin\Debug\Whitworthian_Debug_AnyCPU.xap
+C:\Users\Colleen\Desktop\Whitworthian\Whitworthian\obj\Debug\App.g.cs
+C:\Users\Colleen\Desktop\Whitworthian\Whitworthian\obj\Debug\MainPage.g.cs
+C:\Users\Colleen\Desktop\Whitworthian\Whitworthian\obj\Debug\NewsArticle.g.cs
+C:\Users\Colleen\Desktop\Whitworthian\Whitworthian\obj\Debug\Search.g.cs
+C:\Users\Colleen\Desktop\Whitworthian\Whitworthian\obj\Debug\Whitworthian.g.resources
+C:\Users\Colleen\Desktop\Whitworthian\Whitworthian\obj\Debug\Whitworthian.Resources.AppResources.resources
+C:\Users\Colleen\Desktop\Whitworthian\Whitworthian\obj\Debug\Whitworthian.csproj.GenerateResource.Cache
+C:\Users\Colleen\Desktop\Whitworthian\Whitworthian\obj\Debug\Whitworthian.dll
+C:\Users\Colleen\Desktop\Whitworthian\Whitworthian\obj\Debug\Whitworthian.pdb
+C:\Users\Colleen\Desktop\Whitworthian\Whitworthian\obj\Debug\XapCacheFile.xml

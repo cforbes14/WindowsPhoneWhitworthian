@@ -48,8 +48,9 @@ namespace Whitworthian
         private void NewsNav_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {   
             // Get the title of the article from the TextBlock
-            TextBlock tb = (TextBlock)sender;            
-            string title = tb.Text;
+            TextBlock tb = (TextBlock)sender;
+            string msg = tb.Text;
+            string title = "";
 
             // Get data from the ItemsSource
             var data = NewsData.ItemsSource;
@@ -61,12 +62,22 @@ namespace Whitworthian
             for(int i = 0; i < data.Count; i++)
             {
                 current = (ItemViewModel)data[i];
-                if (current.NewsLineTitle == title)
+                if (current.NewsLineTitle == msg)
                 {
+                    title = msg;
                     content = current.NewsLineText;
                     image = current.NewsLinePic;
                     break;
                 }
+                else if (current.NewsLineSummary == msg)
+                {
+                    title = current.NewsLineTitle;
+                    content = current.NewsLineText;
+                    image = current.NewsLinePic;
+                    break;
+
+                }
+
             }
             // Send the content through the HTML parser -- this formats the string and erases HTML tags
             content = fixString(content);
@@ -87,7 +98,8 @@ namespace Whitworthian
         {
             // Get the title of the article from the TextBlock
             TextBlock tb = (TextBlock)sender;
-            string title = tb.Text;
+            string msg = tb.Text;
+            string title = "";
 
             // Get data from the ItemsSource
             var data = ACData.ItemsSource;
@@ -99,8 +111,16 @@ namespace Whitworthian
             for (int i = 0; i < data.Count; i++)
             {
                 current = (ItemViewModel)data[i];
-                if (current.ACLineTitle == title)
+                if (current.ACLineTitle == msg)
                 {
+                    title = msg;
+                    content = current.ACLineText;
+                    image = current.ACLinePic;
+                    break;
+                }
+                else if (current.ACLineSummary == msg)
+                {
+                    title = current.ACLineTitle;
                     content = current.ACLineText;
                     image = current.ACLinePic;
                     break;
@@ -124,7 +144,8 @@ namespace Whitworthian
         {
             // Get the title of the article from the TextBlock
             TextBlock tb = (TextBlock)sender;
-            string title = tb.Text;
+            string msg = tb.Text;
+            string title = "";
 
             // Get data from the ItemsSource
             var data = OpinionsData.ItemsSource;
@@ -136,8 +157,17 @@ namespace Whitworthian
             for (int i = 0; i < data.Count; i++)
             {
                 current = (ItemViewModel)data[i];
-                if (current.OpinionsLineTitle == title)
+
+                if (current.OpinionsLineTitle == msg)
                 {
+                    title = msg;
+                    content = current.OpinionsLineText;
+                    image = current.OpinionsLinePic;
+                    break;
+                }
+                else if (current.OpinionsLineSummary == msg)
+                {
+                    title = current.OpinionsLineTitle;
                     content = current.OpinionsLineText;
                     image = current.OpinionsLinePic;
                     break;
@@ -161,7 +191,8 @@ namespace Whitworthian
         {
             // Get the title of the article from the TextBlock
             TextBlock tb = (TextBlock)sender;
-            string title = tb.Text;
+            string msg = tb.Text;
+            string title = "";
 
             // Get data from the ItemsSource
             var data = SportsData.ItemsSource;
@@ -173,8 +204,16 @@ namespace Whitworthian
             for (int i = 0; i < data.Count; i++)
             {
                 current = (ItemViewModel)data[i];
-                if (current.SportsLineTitle == title)
+                if (current.SportsLineTitle == msg)
                 {
+                    title = msg;
+                    content = current.SportsLineText;
+                    image = current.SportsLinePic;
+                    break;
+                }
+                else if (current.SportsLineSummary == msg)
+                {
+                    title = current.SportsLineTitle;
                     content = current.SportsLineText;
                     image = current.SportsLinePic;
                     break;
